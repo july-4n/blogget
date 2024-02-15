@@ -1,8 +1,13 @@
+import Header from './components/Header'
+import Main from './components/Main'
+
+
 function App() {
   return (
-    <header className="App-header">
-      Hello React
-    </header>
+    <>
+    <Header></Header>
+    <Main></Main>
+    </>
   );
 }
 
