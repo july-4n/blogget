@@ -1,9 +1,13 @@
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import style from './Layout.module.css';
 
 export const Layout = ({children}) =>
   <div className={style.container}>{children}</div>;
 
 Layout.propTypes = {
-  children: propTypes.object,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+    PropTypes.object,
+  ]),
 };
