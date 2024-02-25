@@ -3,7 +3,7 @@ import style from './Tabs.module.css';
 import PropTypes from 'prop-types';
 import {assignId} from '../../../utils/generateRandomId';
 import {debounceRaf} from '../../../utils/debounceRaf';
-import {Text} from '../../../UI/Text/Text';
+import Text from '../../../UI/Text';
 import {ReactComponent as ArrowIcon} from './img/arrow.svg';
 import {ReactComponent as TopIcon} from './img/top.svg';
 import {ReactComponent as HomeIcon} from './img/home.svg';

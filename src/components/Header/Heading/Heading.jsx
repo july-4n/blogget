@@ -1,6 +1,6 @@
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import style from './Heading.module.css';
-import {Text} from '../../../UI/Text/Text';
+import Text from '../../../UI/Text';
 
 export const Heading = ({heading}) =>
   <Text
@@ -13,5 +13,5 @@ export const Heading = ({heading}) =>
   </Text>;
 
 Heading.propTypes = {
-  heading: propTypes.string,
+  heading: PropTypes.string,
 };

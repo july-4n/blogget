@@ -23,7 +23,7 @@ export const Text = props => {
     {[style.center]: center},
     {[style[`fs${size}`]]: size},
     {[style[`fst${tsize}`]]: tsize},
-    {[style[`fst${tsize}`]]: dsize},
+    {[style[`fsd${dsize}`]]: dsize},
     style[fontWeight],
   );
 
