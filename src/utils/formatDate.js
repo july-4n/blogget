@@ -1,4 +1,5 @@
 const formatDate = date => {
+  // const newDate = date * 1000;
   const options = {
     year: 'numeric',
     month: 'numeric',
