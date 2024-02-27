@@ -2,13 +2,12 @@ import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import {URL_API} from '../api/const';
 import {useToken} from '../hooks/useToken';
-// import {Post} from '../components/Main/List/Post/Post';
-// import List from '../components/Main/List';
+
 export const postsContext = React.createContext({});
 
 export const PostsContextProvider = ({children}) => {
   const [token, delToken] = useToken();
-  const [postData, setPostData] = useState([]);
+  const [postsData, setPostData] = useState([]);
 
   useEffect(() => {
     if (!token) return;
@@ -25,9 +24,9 @@ export const PostsContextProvider = ({children}) => {
         return response.json();
       })
       .then(({data}) => {
-        console.log(data.children);
-        const postData = data.children;
-        setPostData(postData);
+        const postsData = data.children;
+        console.log(postsData);
+        setPostData(postsData);
       })
       .catch(err => {
         console.error(err);
@@ -36,7 +35,7 @@ export const PostsContextProvider = ({children}) => {
   }, [token]);
 
   return (
-    <postsContext.Provider value={postData}>
+    <postsContext.Provider value={postsData}>
       {children}
     </postsContext.Provider>
   );

@@ -1,5 +1,5 @@
 const formatDate = date => {
-  // const newDate = date * 1000;
+  const newDate = date * 1000;
   const options = {
     year: 'numeric',
     month: 'numeric',
@@ -9,7 +9,7 @@ const formatDate = date => {
   };
 
   return new Intl.DateTimeFormat('ru', options)
-    .format(new Date(date));
+    .format(new Date(newDate));
 };
 
 export default formatDate;
