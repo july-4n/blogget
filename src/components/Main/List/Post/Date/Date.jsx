@@ -7,7 +7,7 @@ export const Date = ({date}) => (
 );
 
 Date.propTypes = {
-  date: PropTypes.string,
+  date: PropTypes.number,
 };
 
 export default Date;

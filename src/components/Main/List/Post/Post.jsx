@@ -8,10 +8,10 @@ import {ReactComponent as DeleteIcon} from './img/delete.svg';
 
 
 export const Post = ({postData}) => {
-  const {title, author, ups, date} = postData;
+  const {thumbnail, title, author, ups, created: date} = postData;
   return (
     <li className={style.post}>
-      <Preview title={title}/>
+      <Preview thumbnail={thumbnail} title={title}/>
       <Content title={title} author={author}/>
       <Rating ups={ups}/>
       <button className={style.delete}>
