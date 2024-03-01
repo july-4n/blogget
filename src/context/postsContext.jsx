@@ -12,7 +12,7 @@ export const PostsContextProvider = ({children}) => {
   useEffect(() => {
     if (!token) return;
 
-    fetch(`${URL_API}/best?limit=20`, {
+    fetch(`${URL_API}/best?limit=14`, {
       headers: {
         Authorization: `bearer ${token}`,
       }
