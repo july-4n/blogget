@@ -13,6 +13,7 @@ export const useCommentsData = (id) => {
       },
     })
       .then((response) => {
+        console.log(response);
         if (response.status === 401) {
           throw new Error(response.status);
         }

@@ -24,6 +24,7 @@ export const PostsContextProvider = ({children}) => {
         return response.json();
       })
       .then(({data}) => {
+        console.log((data));
         const postsData = data.children;
         console.log(postsData);
         setPostData(postsData);

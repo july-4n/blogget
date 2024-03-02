@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 export const Comments = ({comments}) => (
   <ul className={style.list}>
     {comments.length ? (
-        comments.map(({id, author, text, created: date}) => (
+        comments.map(({id, author, body: text, created: date}) => (
           <li className={style.item} key={id}>
             <Text As='h3' className={style.author}
               size={18}
