@@ -12,7 +12,7 @@ export const Modal = ({closeModal, id}) => {
   const overlayRef = useRef(null);
   console.log(id);
 
-  const [post, comments] = useCommentsData(id);
+  const [post, comments, status] = useCommentsData(id);
   // console.log(post);
   // console.log(comments);
 
@@ -35,7 +35,7 @@ export const Modal = ({closeModal, id}) => {
   return ReactDOM.createPortal(
     <div className={style.overlay} ref={overlayRef}>
       <div className={style.modal}>
-        {status === 'loaded' && (
+        {status === 200 && (
           <>
             <h2 className={style.title}>{post.title}</h2>
             <div className={style.content}>

@@ -4,7 +4,7 @@ import {tokenContext} from '../context/tokenContext';
 
 export const useCommentsData = (id) => {
   const {token} = useContext(tokenContext);
-  const [[post, comments], setCommentsData] = useState([]);
+  const [[post, comments, status], setCommentsData] = useState([]);
 
   useEffect(() => {
     fetch(`${URL_API}/comments/${id}`, {
@@ -43,5 +43,5 @@ export const useCommentsData = (id) => {
       });
   }, []);
 
-  return [post, comments];
+  return [post, comments, status];
 };
