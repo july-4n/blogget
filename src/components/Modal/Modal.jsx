@@ -2,19 +2,19 @@ import style from './Modal.module.css';
 import React, {useEffect, useRef} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import {ReactComponent as CloseIcon} from './img/close.svg';
-import Markdown from 'markdown-to-jsx';
+// import {ReactComponent as CloseIcon} from './img/close.svg';
+// import Markdown from 'markdown-to-jsx';
 import {useCommentsData} from '../../hooks/useCommentsData';
-import FormComment from './FormComment';
-import Comments from './Comments';
+// import FormComment from './FormComment';
+// import Comments from './Comments';
 
 export const Modal = ({closeModal, id}) => {
   const overlayRef = useRef(null);
   console.log(id);
 
-  const [post, comments, status] = useCommentsData(id);
-  // console.log(post);
-  // console.log(comments);
+  const [title, comments] = useCommentsData(id);
+  console.log(title);
+  console.log(comments);
 
   const handleClick = e => {
     const target = e.target;
@@ -34,32 +34,28 @@ export const Modal = ({closeModal, id}) => {
 
   return ReactDOM.createPortal(
     <div className={style.overlay} ref={overlayRef}>
-      <div className={style.modal}>
-        {status === 200 && (
-          <>
-            <h2 className={style.title}>{post.title}</h2>
-            <div className={style.content}>
-              <Markdown options={{
-                overrides: {
-                  a: {
-                    props: {
-                      target: '_blank',
-                    },
-                  },
+      {/* <div className={style.modal}>
+        <h2 className={style.title}>{post.title}</h2>
+        <div className={style.content}>
+          <Markdown options={{
+            overrides: {
+              a: {
+                props: {
+                  target: '_blank',
                 },
-              }}>
-                {post.markdown}
-              </Markdown>
-            </div>
-            <p className={style.author}>{post.author}</p>
-            <FormComment/>
-            <Comments comments={comments}/>
-          </>
-        )}
+              },
+            },
+          }}>
+            {post.markdown}
+          </Markdown>
+        </div>
+        <p className={style.author}>{post.author}</p>
+        <FormComment/>
+        <Comments comments={comments}/>
         <button className={style.close} onClick={() => closeModal()}>
           <CloseIcon/>
         </button>
-      </div>
+      </div> */}
     </div>,
     document.getElementById('modal-root'),
   );

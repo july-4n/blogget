@@ -4,7 +4,7 @@ import {tokenContext} from '../context/tokenContext';
 
 export const useCommentsData = (id) => {
   const {token} = useContext(tokenContext);
-  const [[post, comments, status], setCommentsData] = useState([]);
+  const [[post, comments], setCommentsData] = useState([]);
 
   useEffect(() => {
     fetch(`${URL_API}/comments/${id}`, {
@@ -13,7 +13,7 @@ export const useCommentsData = (id) => {
       },
     })
       .then((response) => {
-        console.log(response);
+        console.log(response.json());
         if (response.status === 401) {
           throw new Error(response.status);
         }
@@ -43,5 +43,5 @@ export const useCommentsData = (id) => {
       });
   }, []);
 
-  return [post, comments, status];
+  return [post, comments];
 };

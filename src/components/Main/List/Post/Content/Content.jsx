@@ -43,7 +43,7 @@ const Content = ({title, author, markdown, id}) => {
           closeModal={() => {
             setIsModalOpen(false);
           }}/>
-      )};
+      )}
     </div>
   );
 };
