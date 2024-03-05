@@ -46,7 +46,7 @@ export const Modal = ({closeModal, id}) => {
               },
             },
           }}>
-            {post.markdown}
+            {post.selftext}
           </Markdown>
         </div>
         <p className={style.author}>{post.author}</p>
